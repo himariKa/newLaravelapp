@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 class HelloController extends Controller
 {
-    public function index(){
+    public function index($id='noname',$pass='unknown'){
+
         return <<<EOF
 
         <html>
@@ -21,9 +22,13 @@ class HelloController extends Controller
         <body>
             <h1>Index</h1>
             <p>これは、Helloコントローラのindexアクションです。</p>
+            <ul>
+                <li>ID:{$id}</li>
+                <li>PASS:{$pass}</li>
+            </ul>
         </body>
         </html>
         EOF;
-        
+
     }
 }
