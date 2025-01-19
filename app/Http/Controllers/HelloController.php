@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-
-
 // global $head, $style, $body, $end;
 // $head = '<html><head>';
 // $style = <<<EOF
@@ -23,8 +21,11 @@ use Illuminate\Http\Response;
 //     return "<{$tag}>" . $txt . "</{$tag}>";
 // }
 
-// class HelloController extends Controller
-// {
+class HelloController extends Controller
+{
+    public function index(){
+        return view('hello.index');
+    }
 //     public function index(Request $request, Response $response){
 //         $html = <<<EOF
 //         <html>
@@ -78,5 +79,6 @@ use Illuminate\Http\Response;
     //     </body>
     //     </html>
     //     EOF;
-    }
+//     }
 }
+?>

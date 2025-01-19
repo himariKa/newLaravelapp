@@ -63,10 +63,10 @@ EOF;
 // Route::get('hello','App\Http\Controllers\HelloController@index');
 // Route::get('hello/other','App\Http\Controllers\HelloController@other');
 
-// Route::get('hello','App\Http\Controllers\HelloController@index');
-Route::get('hello',function(){
-    return view('hello.index');
-});
+Route::get('hello','App\Http\Controllers\HelloController@index');
+// Route::get('hello',function(){
+//     return view('hello.index');
+// });
 
 
 require __DIR__.'/auth.php';
