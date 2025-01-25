@@ -1,1 +1,5 @@
-'driver' => env('SESSION_DRIVER', 'database'),
+<?php
+
+return [
+    'driver' => env('SESSION_DRIVER', 'database'),
+];
