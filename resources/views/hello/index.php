@@ -1,5 +1,6 @@
 <html>
     <head>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>Hello/Index</title>
         <style>
         body {font-size:16pt; color:#999; }
