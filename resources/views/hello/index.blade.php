@@ -9,11 +9,12 @@
     </head>
     <body>
         <h1>Blade/Index</h1>
-        @if($msg != '')
-        <p>こんにちは、{{$msg}}さん</p>
-        @else
-        <p>お名前を教えてください。</p>
-        @endif
+        <p>例</p>
+        <ol>
+            @foreach ($data as $item)
+            <li>{{$item}}</li>
+            @endforeach
+        </ol>
         <form method="POST" action="/hello">
             @csrf
             <input type="text" name="msg">
