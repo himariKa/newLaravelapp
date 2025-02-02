@@ -9,20 +9,17 @@
     </head>
     <body>
         <h1>Blade/Index</h1>
-        <p>forディレクティブの利用</p>
+        <p>loopディレクティブの利用</p>
         <ol>
-            @for($i = 1;$i<=10;$i++)
-                {{-- 奇数の場合 --}}
-                @if($i % 2 == 1)
-                    <li>奇数です
-                    @continue
-                {{-- 10以下で偶数の場合 --}}
-                @elseif($i <= 10)
-                    <li>{{$i}}は偶数です
-                @else
-                    @break
+            @foreach($data as $item)
+                @if($loop->first)
+                    <p>データ一覧を表示</p><ul>
                 @endif
-            @endfor
+                    <li>{{$loop->iteration}}.{{$item}}</li>
+                @if($loop->last)
+                </ul><p>ここまで！</p>
+                @endif
+            @endforeach
         </ol>
         {{-- <form method="POST" action="/hello">
             @csrf
