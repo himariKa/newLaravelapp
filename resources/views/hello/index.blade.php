@@ -9,16 +9,25 @@
     </head>
     <body>
         <h1>Blade/Index</h1>
-        <p>例</p>
-            @if ($msg != '')
-            <p>こんにちは{{$msg}}さん</p>
-            @else
-            <p>何か書いてください</p>
-            @endif
-        <form method="POST" action="/hello">
+        <p>forディレクティブの利用</p>
+        <ol>
+            @for($i = 1;$i<=10;$i++)
+                {{-- 奇数の場合 --}}
+                @if($i % 2 == 1)
+                    <li>奇数です
+                    @continue
+                {{-- 10以下で偶数の場合 --}}
+                @elseif($i <= 10)
+                    <li>{{$i}}は偶数です
+                @else
+                    @break
+                @endif
+            @endfor
+        </ol>
+        {{-- <form method="POST" action="/hello">
             @csrf
             <input type="text" name="msg">
             <input type="submit">
-        </form>
+        </form> --}}
     </body>
 </html>
